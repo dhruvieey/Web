@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form method="POST">
+        {% csrf_token %}
+        <button id="recordButton">Record</button>
+        <audio id="transcription"></audio>
+    </form>
+    <script>
+        const recordButton = document.getElementById("recordButton");
+        const transcription = document.getElementById("transcription");
+
+        let mediaRecorder;
+
+        recordButton.addEventListener("mousedown", startRecording);
+        recordButton.addEventListener("mouseup", stopRecording);
+
+        function startRecording() {
+            navigator.mediaDevices
+                .getUserMedia({ audio: true })
+                .then(stream => {
+                    mediaRecorder = new MediaRecorder(stream);
+                    mediaRecorder.start();
+
+                    const audioChunks = [];
+                    mediaRecorder.addEventListener("dataavailable", event => {
+                        audioChunks.push(event.data);
+                    });
+
+                    mediaRecorder.addEventListener("stop", () => {
+                        const audioBlob = new Blob(audioChunks);
+                        const audioUrl = URL.createObjectURL(audioBlob);
+
+                        const audioContext = new AudioContext();
+                        const source = audioContext.createMediaStreamSource(stream);
+                        const recognizer = new webkitSpeechRecognition();
+                        recognizer.interimResults = true;
+                        recognizer.lang = "en-US";
+
+                        recognizer.addEventListener("result", event => {
+                            const transcript = Array.from(event.results)
+                                .map(result => result[0])
+                                .map(result => result.transcript)
+                                .join("");
+
+                            transcription.textContent = transcript;
+
+                            const formData = new FormData();
+                            formData.append("audio_file", audioBlob);
+
+                            const csrf_token = document.getElementsByName("csrfmiddlewaretoken")[0].value;
+
+                            const xhr = new XMLHttpRequest();
+                            xhr.open("POST", "/convert_audio_to_text/", true);
+                            xhr.setRequestHeader("X-CSRFToken", csrf_token);
+                            xhr.send(formData);
+
+                            xhr.onload = function () {
+                                if (xhr.status === 200) {
+                                    const text = xhr.responseText;
+                                    transcription.textContent = text;
+                                }
+                            };
+                        });
+
+                        recognizer.start();
+                    });
+                });
+        }
+
+        function stopRecording() {
+            mediaRecorder.stop();
+        }
+
+
+    </script>
+
+</body>
+
+</html>

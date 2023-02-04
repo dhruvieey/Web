@@ -1,15 +1,16 @@
+import base64
 from email.mime import image
 import re
 from django.contrib import messages
-from django.shortcuts import get_object_or_404, redirect, render
+from django.shortcuts import get_object_or_404, redirect, render,HttpResponse
 from django.contrib.auth.models import User,auth
 from .models import EditProfile, Post
 from .forms import AddPostForm, EditProfileForm, profileForm
-
+import speech_recognition as sr
 # Create your views here.
 def index(request):
     return render(request,'index.html')
-    0
+
 def homeView(request):
     if not request.user.is_authenticated:
         return redirect('login')
@@ -93,3 +94,23 @@ def guess_the_word(request):
 
 def multiplication_game(request):
         return render(request,'multiplication_game.html')
+
+def save_recorded_audio(request):
+    if request.method == "POST":
+        print("Start")
+        audio_file = request.FILES.get("audio")
+        print("Audio Gen")
+        recognizer = sr.Recognizer()
+        print("Recognizer Activated")
+        audio_data = sr.AudioData(audio_file.read(), audio_file.samplerate, audio_file.sample_width)
+        print("Audio Data Taken")
+        text = recognizer.recognize_google(audio_data)
+        print("Text Gen")
+        print(text)
+        return HttpResponse("Audio uploaded successfully")
+    else:
+        return render(request,'voice.html')
+
+
+
+
