@@ -110,7 +110,6 @@ def save_recorded_audio(request):
         return HttpResponse("Audio uploaded successfully")
     else:
         return render(request,'voice.html')
-
-
-
-
+    
+def maze(request):
+    return render(request,'maze.html')
