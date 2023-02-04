@@ -21,4 +21,7 @@ urlpatterns = [
     path('level2',views.level2),
     path('level3',views.level3),
     path('levels',views.levels),
+    path('voice',views.save_recorded_audio,name='voice'),
+    path('maze',views.maze),
+    path('crossword',views.crossword)
 ]
