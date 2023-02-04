@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style.css'%}">
+</head>
+
+<body>
+        <header id="" class="mobile-menu">
+            <a href="" class="logo ">Game Learning</a>
+            <ul>
+                <li><a href="register" class="">Sign Up</a></li>
+                <li><a href="login" class="">Sign In</a></li>
+                <li><a href="" class="">About Us</a></li>
+            </ul>
+        </header>
+                <section id="">
+                    <img src="{% static 'sun.png' %}" alt="" id="sun">
+                    <img src="{% static 'cloud.png' %}" alt="" id="cloud_one">
+                    <img src="{% static 'cloud.png' %}" alt="" id="cloud_three">
+                    <img src="{% static 'cloud.png' %}" alt="" id="cloud_four">
+                    <img src="{% static 'cloud.png' %}" alt="" id="cloud_two">
+                    <img src="{% static 'sky1.png' %}" alt="" id="sky">
+                    <img src="{% static 'plane.png' %}" id="text" alt="">
+                    <a href="#sec" id="btn">Explore</a>
+                    <img src="{% static 'desert_one.png' %}" alt="" id="desert_one">
+                    <img src="{% static 'camel.png' %}" alt="" id="camel">
+                </section>
+    <div class="sec" id="sec">
+
+        <h2>QUICK Learn</h2>
+        <p>
+            There is a common misunderstanding about the importance of pronunciation and language. 
+            A common misconception is that many think pronunciation is all about how you speak and if you have an accent or speak like a native. 
+            
+            English being a system of class distinction also leads to this conclusion.
+           There is also confusion about the differences between pronunciation and accent. <br><br>
+
+            By learning the relationship between the letters and their respective sounds, the children use these skills to work out how to read and pronounce the words they see. “It also helps them to guess how to spell and read words. 
+            This greatly increases the speed of learning.<br><br>
+
+            Pronunciation can be good or bad, but accent is accent and there isn't a good or bad accent really” .<br><br>
+          A sound does exist in the mother tongue, but not as a separate phoneme: that is to say, the learner does not perceive it as a distinct sound that makes a difference to meaning.</p>
+    </div>
+    <script>
+        var mobileMenuBtn = document.querySelector("#mobile-menu-btn");
+        var mobileMenu = document.querySelector(".mobile-menu");
+        mobileMenuBtn.addEventListener("click", () => {
+          if (mobileMenu.style.display === "none") {
+            mobileMenu.style.display = "flex";
+            mobileMenuBtn.innerHTML = "Close";
+          } 
+          else {
+            mobileMenu.style.display = "none";
+            mobileMenuBtn.innerHTML = "Menu";
+          }
+        });
+        let sun = document.getElementById('sun');
+        let cloud_one = document.getElementById('cloud_one');
+        let cloud_two = document.getElementById('cloud_two');
+        let cloud_three = document.getElementById('cloud_three');
+        let cloud_four = document.getElementById('cloud_four');
+        let sky = document.getElementById('sky');
+        let text = document.getElementById('text');
+        let btn = document.getElementById('btn');
+        let desert_one = document.getElementById('desert_one');
+        let camel = document.getElementById('camel');
+        let header = document.querySelector('header');
+        window.addEventListener('scroll', function(){
+
+            let value = window.scrollY;
+            cloud_one.style.left = value * 0.25 + 'px';
+            cloud_two.style.right = value * 0.25 + 'px';
+            sun.style.top = value * 0.8 + 'px';
+            desert_one.style.top = value * 0 + 'px';
+            text.style.marginLeft = value * 2 + 'px';
+            header.style.top = value * 0.8 + 'px';
+
+        })
+
+    </script>
+
+</body>
+
+</html>

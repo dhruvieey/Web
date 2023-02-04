@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block css %} <link rel="stylesheet" href="{% static 'login.css' %}"> {% endblock css %}
+
+{% block title %} login {% endblock title %}
+
+{% block content %}
+   <div class="container">
+<div class="login">
+        <form action=" " method="post">{% csrf_token %}
+            <h1 id="signin">Game Learning</h1>
+            <input type="text" name="userName" placeholder="username" ><br>
+            <input type="password" name="password" placeholder="password"><br>
+            <center><input type="submit" class="btn btn-primary " id="login" ><br></center>
+        </form>
+    </div>
+
+    <div class="sign-up">
+        <p>Don't have an account?&nbsp;<a href=" {% url 'register' %} ">Sign up</a></p>
+    </div>
+</div>
+    <div>
+        {% for message in messages %}
+            <h3> {{message}} </h3>
+        {% endfor %}
+    </div>
+{% endblock content %}
+
