@@ -87,3 +87,9 @@ def edit_profile(request):
             return redirect('user_profile')
     context = {'form':form, 'form2':form2}
     return render(request, 'edit-profile.html',context)
+
+def guess_the_word(request):
+        return render(request,'guess_the_word.html')
+
+def multiplication_game(request):
+        return render(request,'multiplication_game.html')
