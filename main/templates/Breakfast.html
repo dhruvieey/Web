@@ -11,14 +11,14 @@
 
 <body background="{% static '5.jpg'%}">
     <header>
-        <div id="brand"><a href="/">MyCompany</a></div>
+        <div id="brand"><a href="/">Welcome {{current_user}},</a></div>
         <nav>
             <ul>
                 <li><a href="home">Home</a></li>
                 <li><a href="breakfast">Breakfast (Easy)</a></li>
                 <li><a href="lunch">Lunch (Medium)</a></li>
                 <li ><a href="dinner">Dinner (Hard)</a></li>
-                <li ><a href="logout">Profile</a></li>
+                <li ><a href="logout">logout</a></li>
             </ul>
         </nav>
         <div id="hamburger-icon" onclick="toggleMobileMenu(this)">
@@ -30,7 +30,7 @@
                 <li><a href="breakfast">Breakfast (Easy)</a></li>
                 <li><a href="lunch">Lunch (Medium)</a></li>
                 <li><a href="dinner">Dinner (Hard)</a></li>
-                <li id="Profile"><a href="/Profile">Profile</a></li>
+                <li id="Profile"><a href="logout">logout</a></li>
             </ul>
         </div>
     </header>
@@ -42,7 +42,7 @@
         <ul id="game-list">
             <li>
                 <img src="{% static 'crossword1.jpg'%}" alt="Game Thumbnail">
-                <h3> <a href="Game/Crossword/index.html">Catch & Match</a> </h3>
+                <h3> <a href="maze">Maze Solve</a> </h3>
             </li>
             <li>
                 <img src="{% static 'Shape.jpg'%}" alt="Game Thumbnail">
