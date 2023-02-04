@@ -1,44 +1,244 @@
-body{
-    background-image: linear-gradient(to top, #a8edea 0%, #fed6e3 100%);
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
-/* Dropdown Button */
-.dropbtn {
-    background-color: #04AA6D;
-    color: white;
-    padding: 16px;
-    font-size: 16px;
-    border: none;
-  }
-  
-  /* The container <div> - needed to position the dropdown content */
-  .dropdown {
-    position: relative;
-    display: inline-block;
-  }
-  
-  /* Dropdown Content (Hidden by Default) */
-  .dropdown-content {
+
+body {
+  background-color: #353836;
+  color: white;
+  font-family: "Poppins", sans-serif;
+}
+
+header a {
+  text-decoration: none;
+}
+
+header {
+  padding: 0 20px;
+  background-color: #1d1f1d;
+  height: 50px;
+  display: flex;
+  justify-content: space-between;
+}
+
+#brand {
+  font-weight: bold;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+}
+
+#brand a {
+  color: #09c372;
+}
+
+ul {
+  list-style: none;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+ul a {
+  color: white;
+}
+
+ul li {
+  padding: 5px;
+  margin-left: 10px;
+}
+
+ul li:hover {
+  transform: scale(1.1);
+  transition: 0.3s;
+}
+
+#Profile {
+  border-radius: 5px;
+  padding: 5px 8px;
+}
+
+#Profile {
+  border: 1px solid #498afb;
+}
+
+#Profile a {
+  color: #498afb;
+}
+
+#hamburger-icon {
+  margin: auto 0;
+  display: none;
+  cursor: pointer;
+}
+
+#hamburger-icon div {
+  width: 35px;
+  height: 3px;
+  background-color: rgb(255, 255, 255);
+  margin: 6px 0;
+  transition: 0.4s;
+}
+
+.open .bar1 {
+  -webkit-transform: rotate(-45deg) translate(-6px, 6px);
+  transform: rotate(-45deg) translate(-6px, 6px);
+}
+
+.open .bar2 {
+  opacity: 0%;
+}
+
+.open .bar3 {
+  -webkit-transform: rotate(45deg) translate(-6px, -8px);
+  transform: rotate(45deg) translate(-6px, -8px);
+}
+
+.open .mobile-menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.mobile-menu {
+  display: none;
+  background-color: #1d1f1d;
+  position: absolute;
+  top: 50px;
+  left: 0;
+  height: calc(100vh - 50px);
+  width: 100%;
+}
+
+.mobile-menu li {
+  margin-bottom: 10px;
+}
+
+@media only screen and (max-width: 600px) {
+  header nav {
     display: none;
-    position: absolute;
-    background-color: #f1f1f1;
-    min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-    z-index: 1;
   }
-  
-  /* Links inside the dropdown */
-  .dropdown-content a {
-    color: black;
-    padding: 12px 16px;
-    text-decoration: none;
+
+  #hamburger-icon {
     display: block;
   }
-  
-  /* Change color of dropdown links on hover */
-  .dropdown-content a:hover {background-color: #ddd;}
-  
-  /* Show the dropdown menu on hover */
-  .dropdown:hover .dropdown-content {display: block;}
-  
-  /* Change the background color of the dropdown button when the dropdown content is shown */
-  .dropdown:hover .dropbtn {background-color: #3e8e41;}
+}
+
+/* copy */
+
+h1 {
+  font-size: 36px;
+  margin: 0;
+  color: #ffffff;
+}
+
+main {
+  padding: 20px;
+  margin-top: 10%;
+  text-align: center;
+}
+
+main h2 {
+  color: #1d1f1d;
+  margin-top: 10%;
+  margin-bottom: 25%;
+}
+
+main ul {
+  padding: 0;
+  text-decoration: none;
+  height: 30%;
+  width: 95%;
+  margin: auto;
+}
+
+main a:link {
+  color: #6c7bde;
+  text-decoration: none;
+}
+
+main :visited {
+  color: #ffffff;
+}
+
+main a:hover {
+  font-family: monospace;
+}
+
+#game-list {
+  background-image: linear-gradient(135deg, #5ed649 10%, #2bd6a0 100%);
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  animation: fadeIn 0.5s;
+  box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.box {
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease-in-out;
+  height: 275px;
+  width: 450px;
+  box-sizing: border-box;
+  border: 1px solid rgb(0, 0, 0);
+  border-radius: 12px;
+  padding: 50px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.box:hover {
+  box-shadow: 2px 50px 55px rgba(1, 1, 1, 0.601);
+}
+
+#game-list h3 {
+  font-size: 100%;
+  margin-bottom: 20px;
+  align-content: center;
+  font-family: monospace;
+  color: #1d1f1d
+}
+
+#game-list li {
+  display: flex;
+  flex-wrap: wrap;
+  flex-wrap: column;
+  align-items: center;
+  margin-bottom: 10px;
+  animation: bounceIn 0.5s;
+}
+
+@keyframes bounceIn {
+  from {
+    transform: translateY(-20px);
+  }
+
+  to {
+    transform: translateY(0);
+  }
+}
+
+#game-list img {
+  height: 50px;
+  align-items: center;
+  margin: 0% 0% 0% 20%;
+  box-shadow: #353836;
+
+}

@@ -93,3 +93,26 @@ def guess_the_word(request):
 
 def multiplication_game(request):
         return render(request,'multiplication_game.html')
+
+def Breakfast(request):
+    return render(request,'Breakfast.html')
+
+def Lunch(request):
+    return render(request,'Lunch.html')
+
+def Dinner(request):
+    return render(request,'Dinner.html')
+
+def arithmetic(request):
+    return render(request,'Shape Arthetmatic\index.html')
+
+def level1(request):
+    return render(request,'Shape Arthetmatic\level1.html')
+def level2(request):
+    return render(request,'Shape Arthetmatic\level2.html')
+
+def level3(request):
+    return render(request,'Shape Arthetmatic\level3.html')
+
+def levels(request):
+    return render(request,'Shape Arthetmatic\Levels.html')

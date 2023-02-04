@@ -12,5 +12,13 @@ urlpatterns = [
     path('user_profile',views.profile, name='user_profile'),
     path('edit-profile', views.edit_profile, name='edit-profile'),
     path('guess_the_word',views.guess_the_word,name='guess_the_word'),
-    path('multiplication_game',views.multiplication_game,name='multiplication_game')
+    path('multiplication_game',views.multiplication_game,name='multiplication_game'),
+    path('breakfast',views.Breakfast),
+    path('lunch',views.Lunch),
+    path('dinner',views.Dinner),
+    path('arithmetic',views.arithmetic),
+    path('level1',views.level1),
+    path('level2',views.level2),
+    path('level3',views.level3),
+    path('levels',views.levels),
 ]

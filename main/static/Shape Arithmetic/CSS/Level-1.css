@@ -1,0 +1,233 @@
+body{
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#Heading{
+    text-align: center;
+    font-size: 20px;
+    color: #ffffff;
+    font-family: 'Unbounded', cursive;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#Heading h2{
+    font-size: 25px;
+    color: #ffffff;
+    font-family: 'Solitreo', cursive;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+#container{
+    width: 100%;
+    height: 100%;
+    align-items: center ;
+    background-color: none;
+    position: relative;
+    overflow: hidden;
+    justify-content: center;
+}
+
+#container .shape{
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    display: none;
+}
+
+#container .square{
+    height: 50px;
+    width: 50px;
+    background-color: rgb(194, 47, 47);
+}
+
+#container .circle{
+    height: 50px;
+    width: 50px;
+    background-color: rgb(209, 133, 19);
+    border-radius: 50%;
+}
+
+#container .triangle{
+    width: 0;
+    height: 0;
+    border-left: 25px solid transparent;
+    border-right: 25px solid transparent;
+    border-bottom: 50px solid rgb(19, 177, 50);
+}
+
+#container .rectangle{
+    height: 50px;
+    width: 100px;
+    background-color: rgb(17, 20, 177);
+}
+
+#container .star{
+    background-color: orange;
+    transform: rotate(45deg);
+}
+
+#box{
+    width: 100%;
+    height: 100%;
+    background-color: none;
+    position: relative;
+    overflow: hidden;
+    justify-content: center;
+}
+
+#container-1{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#container-2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+#container-3 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+img{
+    width: 100px;
+    height: 100px;
+    margin: 50px;
+}
+
+input {
+    width: 100px;
+    height: 30px;
+    margin: 80px;
+}
+
+.submit {
+    width: 130px;
+    height: 55px;
+    border-radius: 50%;
+    background-color: rgb(51, 176, 174);
+    color: white;
+    font-size: 24px;
+    text-align: center;
+    margin: 0 auto;
+    display: block;
+    margin-bottom: 30px;
+    cursor: pointer;
+    animation: pulse 1s infinite;
+}
+
+.submit:hover {
+    background-color: rgb(0, 255, 119);
+    animation: none;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+#values{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    border-style: dashed;
+    margin-bottom: 10px;
+}
+
+#values img{
+    width: 50px;
+    height: 50px;
+    margin: 10px;
+}
+
+#values .shape{
+    display: flex;   
+    justify-content: center;
+    flex-direction: row;
+}
+
+#values p{
+    width: 50px;
+    height: 50px;
+    position: relative;
+    justify-content: center;
+    padding-top: 10%;
+}
+
+/*demo*/
+
+input[type="number"] {
+    box-sizing: border-box;
+    width: 75%;
+    height: calc(3em + 2px);
+    margin: 10 10;
+    padding: 1em;
+    border: 1px solid #ccc;
+    border-radius: 1.5em;
+    background: #fff;
+    resize: none;
+    outline: none;
+}
+
+input[type="number"][required]:focus {
+    border-color: #00bafa;
+}
+
+input[type="number"][required]:focus+label[placeholder]:before {
+    color: #00bafa;
+}
+
+input[type="number"][required]:focus+label[placeholder]:before,
+input[type="number"][required]:valid+label[placeholder]:before {
+    transition-duration: .2s;
+    transform: translate(0, -1.5em) scale(.9, .9);
+}
+
+input[type="number"][required]:invalid+label[placeholder][alt]:before {
+    content: attr(alt);
+}
+
+input[type="number"][required]+label[placeholder] {
+    display: block;
+    pointer-events: none;
+    line-height: 1.25em;
+    margin-top: calc(-3em - 2px);
+    margin-bottom: calc((3em - 1em) + 2px);
+}
+
+input[type="number"][required]+label[placeholder]:before {
+    content: attr(placeholder);
+    display: inline-block;
+    margin: 0 calc(1em + 2px);
+    padding: 0 2px;
+    color: #898989;
+    white-space: nowrap;
+    transition: .3s ease-in-out;
+    background-image: linear-gradient(to bottom, #fff, #fff);
+    background-size: 100% 5px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}

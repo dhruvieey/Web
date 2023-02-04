@@ -1,23 +1,23 @@
-{% extends 'base1.html' %}
+<html lang="en">
 {% load static %}
 
-{% block title1 %} Home {% endblock title1 %}
-{% block css %} <link rel="stylesheet" href=" {% static 'home.css' %} "> 
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"   />
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
-{% endblock css %}
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'home.css' %}">
+    <title>Navigation bar</title>
+</head>
 
-
-{% block content %}
+<body background="{% static '16.png'%}">
     <header>
-        <div id="brand"><a href="/">Welcome {{current_user}},</a></div>
+        <div id="brand"><a href="/">MyCompany</a></div>
         <nav>
             <ul>
-                <li><a href="">Home</a></li>
-                <li><a href="Breakfast.html">Breakfast (Easy)</a></li>
-                <li><a href="Lunch.html">Lunch (Medium)</a></li>
-                <li><a href="Dinner.html">Dinner (Hard)</a></li>
+                <li><a href="home">Home</a></li>
+                <li><a href="breakfast">Breakfast (Easy)</a></li>
+                <li><a href="lunch">Lunch (Medium)</a></li>
+                <li><a href="dinner">Dinner (Hard)</a></li>
                 <li id="signup"><a href="logout">logout</a></li>
             </ul>
         </nav>
@@ -26,23 +26,23 @@
             <div class="bar2"></div>
             <div class="bar3"></div>
             <ul class="mobile-menu">
-                <li><a href="">Home</a></li>
+                <li><a href="home">Home</a></li>
                 <li><a href="breakfast">Breakfast (Easy)</a></li>
                 <li><a href="lunch">Lunch (Medium)</a></li>
                 <li><a href="dinner">Dinner (Hard)</a></li>
-                <li id="Profile"><a href="logout">Logout</a></li>
+                <li id="Profile"><a href="logout">logout</a></li>
             </ul>
         </div>
     </header>
     <header>
-        <h1>Game Learning</h1>
+        <h1>Dinner</h1>
     </header>
     <main>
-        <h2>Featured Games:</h2>
+        <h2>Hard:</h2>
         <ul id="game-list">
             <li>
                 <img src="{% static 'crossword1.jpg'%}" alt="Game Thumbnail">
-                <h3> <a href="Game/Crossword/index.html">Catch & Match</a> </h3>
+                <h3> <a href="multiplication_game">Multiplication Game</a> </h3>
             </li>
             <li>
                 <img src="{% static 'Shape.jpg'%}" alt="Game Thumbnail">
@@ -55,4 +55,6 @@
         </ul>
     </main>
     <script src="{% static 'index.js' %}"></script>
-{% endblock content %}
+</body>
+
+</html>

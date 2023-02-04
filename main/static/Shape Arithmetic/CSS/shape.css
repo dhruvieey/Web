@@ -1,0 +1,39 @@
+.shape {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+}
+
+.square {
+    height: 50px;
+    width: 50px;
+    background-color: rgb(194, 47, 47);
+    border-width: 20px;
+    border-color: aliceblue;
+}
+
+.circle {
+    height: 50px;
+    width: 50px;
+    background-color: rgb(209, 133, 19);
+    border-radius: 50%;
+}
+
+.triangle {
+    width: 0;
+    height: 0;
+    border-left: 25px solid transparent;
+    border-right: 25px solid transparent;
+    border-bottom: 50px solid rgb(19, 177, 50);
+}
+
+.rectangle {
+    height: 50px;
+    width: 100px;
+    background-color: rgb(17, 20, 177);
+}
+
+.star {
+    background-color: orange;
+    transform: rotate(45deg);
+}
