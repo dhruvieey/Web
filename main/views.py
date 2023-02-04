@@ -113,3 +113,6 @@ def save_recorded_audio(request):
     
 def maze(request):
     return render(request,'maze.html')
+
+def crossword(request):
+    return render(request,'crossword-puzzle-demo.html')

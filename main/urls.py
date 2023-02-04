@@ -14,5 +14,6 @@ urlpatterns = [
     path('guess_the_word',views.guess_the_word,name='guess_the_word'),
     path('multiplication_game',views.multiplication_game,name='multiplication_game'),
     path('voice',views.save_recorded_audio,name='voice'),
-    path('maze',views.maze)
+    path('maze',views.maze),
+    path('crossword',views.crossword)
 ]
